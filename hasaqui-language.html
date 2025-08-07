@@ -246,7 +246,6 @@ wave positive">show positive</textarea>
                 </div>
                 
                 <div class="example-card" onclick="loadExample('rainbow positive')">
-                    <div class="example-title">Colorful Text</div>
                     <div class="example-code">rainbow positive</div>
                 </div>
                 
@@ -267,6 +266,8 @@ wave positive">show positive</textarea>
             </div>
         </div>
     </div>
+</body>
+</html>
 
 <script>
 let interpreter;
@@ -304,110 +305,69 @@ class HasaquiInterpreter {
     executeCommand(command) {
         switch (command) {
             case 'show':
-                this.showBasic();
+                this.output.innerHTML += this.message + '\n\n';
                 break;
             case 'fancy':
-                this.showFancy();
+                this.output.innerHTML += '\n╔══════════════════════════════════════════╗\n║  This is something positive message      ║\n╚══════════════════════════════════════════╝\n\n    ★ ✦ ✧ ★ ✦ ✧ ★ ✦ ✧ ★ ✦ ✧ ★\n    \n';
                 break;
             case 'wave':
-                this.showWave();
+                const chars = this.message.split('');
+                let waveText = '';
+                chars.forEach((char, index) => {
+                    const spaces = Math.abs(Math.sin(index * 0.5)) * 3;
+                    waveText += ' '.repeat(Math.floor(spaces)) + char;
+                });
+                this.output.innerHTML += waveText + '\n\n';
                 break;
             case 'rainbow':
-                this.showRainbow();
+                const colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3'];
+                const chars2 = this.message.split('');
+                let rainbowText = '';
+                chars2.forEach((char, index) => {
+                    const color = colors[index % colors.length];
+                    rainbowText += '<span style="color: ' + color + '">' + char + '</span>';
+                });
+                this.output.innerHTML += rainbowText + '\n\n';
                 break;
             case 'binary':
-                this.showBinary();
+                let binaryText = '';
+                for (let char of this.message) {
+                    binaryText += char.charCodeAt(0).toString(2).padStart(8, '0') + ' ';
+                }
+                this.output.innerHTML += 'Binary: ' + binaryText + '\n\n';
                 break;
             case 'reverse':
-                this.showReverse();
+                const reversed = this.message.split('').reverse().join('');
+                this.output.innerHTML += reversed + '\n\n';
                 break;
             case 'upper':
-                this.showUpper();
+                this.output.innerHTML += this.message.toUpperCase() + '\n\n';
                 break;
             case 'matrix':
-                this.showMatrix();
+                const matrixChars = ['0', '1', '日', '本', 'ハ', 'サ', 'ク', 'イ'];
+                let matrixText = '';
+                for (let i = 0; i < 50; i++) {
+                    matrixText += matrixChars[Math.floor(Math.random() * matrixChars.length)];
+                }
+                this.output.innerHTML += '<span style="color: #00ff00">' + matrixText + '</span>\n';
+                this.output.innerHTML += '<span style="color: #ffffff; background: #000000; padding: 5px;">' + this.message + '</span>\n';
+                this.output.innerHTML += '<span style="color: #00ff00">' + matrixText + '</span>\n\n';
                 break;
             case 'bounce':
-                this.showBounce();
+                const chars3 = this.message.split('');
+                let bounceText = '';
+                chars3.forEach((char, index) => {
+                    const bounce = index % 2 === 0 ? char.toUpperCase() : char.toLowerCase();
+                    bounceText += bounce;
+                });
+                this.output.innerHTML += bounceText + '\n\n';
                 break;
             case 'glow':
-                this.showGlow();
+                this.output.innerHTML += '<span style="text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 30px #ffff00; color: #ffffff;">' + this.message + '</span>\n\n';
                 break;
             default:
                 this.output.innerHTML += 'Error: Unknown command "' + command + '"\n';
         }
-    }
-
-    showBasic() {
-        this.output.innerHTML += this.message + '\n\n';
-    }
-
-    showFancy() {
-        const fancyText = '\n╔══════════════════════════════════════════╗\n║  This is something positive message      ║\n╚══════════════════════════════════════════╝\n\n    ★ ✦ ✧ ★ ✦ ✧ ★ ✦ ✧ ★ ✦ ✧ ★\n    \n';
-        this.output.innerHTML += fancyText;
-    }
-
-    showWave() {
-        const chars = this.message.split('');
-        let waveText = '';
-        chars.forEach((char, index) => {
-            const spaces = Math.abs(Math.sin(index * 0.5)) * 3;
-            waveText += ' '.repeat(Math.floor(spaces)) + char;
-        });
-        this.output.innerHTML += waveText + '\n\n';
-    }
-
-    showRainbow() {
-        const colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3'];
-        const chars = this.message.split('');
-        let rainbowText = '';
-        chars.forEach((char, index) => {
-            const color = colors[index % colors.length];
-            rainbowText += '<span style="color: ' + color + '">' + char + '</span>';
-        });
-        this.output.innerHTML += rainbowText + '\n\n';
-    }
-
-    showBinary() {
-        let binaryText = '';
-        for (let char of this.message) {
-            binaryText += char.charCodeAt(0).toString(2).padStart(8, '0') + ' ';
-        }
-        this.output.innerHTML += 'Binary: ' + binaryText + '\n\n';
-    }
-
-    showReverse() {
-        const reversed = this.message.split('').reverse().join('');
-        this.output.innerHTML += reversed + '\n\n';
-    }
-
-    showUpper() {
-        this.output.innerHTML += this.message.toUpperCase() + '\n\n';
-    }
-
-    showMatrix() {
-        const matrixChars = ['0', '1', '日', '本', 'ハ', 'サ', 'ク', 'イ'];
-        let matrixText = '';
-        for (let i = 0; i < 50; i++) {
-            matrixText += matrixChars[Math.floor(Math.random() * matrixChars.length)];
-        }
-        this.output.innerHTML += '<span style="color: #00ff00">' + matrixText + '</span>\n';
-        this.output.innerHTML += '<span style="color: #ffffff; background: #000000; padding: 5px;">' + this.message + '</span>\n';
-        this.output.innerHTML += '<span style="color: #00ff00">' + matrixText + '</span>\n\n';
-    }
-
-    showBounce() {
-        const chars = this.message.split('');
-        let bounceText = '';
-        chars.forEach((char, index) => {
-            const bounce = index % 2 === 0 ? char.toUpperCase() : char.toLowerCase();
-            bounceText += bounce;
-        });
-        this.output.innerHTML += bounceText + '\n\n';
-    }
-
-    showGlow() {
-        this.output.innerHTML += '<span style="text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 30px #ffff00; color: #ffffff;">' + this.message + '</span>\n\n';
     }
 }
 
@@ -428,7 +388,7 @@ function loadExample(code) {
 }
 
 function openFullscreen() {
-    alert('Fullscreen mode opens in a new window');
+    alert('Fullscreen mode temporarily disabled for stability');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -436,6 +396,3 @@ document.addEventListener('DOMContentLoaded', function() {
     runCode();
 });
 </script>
-
-</body>
-</html>
