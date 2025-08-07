@@ -7,41 +7,41 @@
     <style>
         body {
             font-family: 'Georgia', serif;
-            background: linear-gradient(160deg, #0f0f0f 0%, #1c1c1c 30%, #2a2a2a 100%);
+            background: linear-gradient(160deg, #f8f9fa 0%, #e9ecef 30%, #dee2e6 100%);
             margin: 0;
             padding: 40px 20px;
             min-height: 100vh;
-            color: #e0e0e0;
+            color: #212529;
         }
         
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            background: rgba(20, 20, 20, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 2px;
             padding: 60px 40px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0,0,0,0.1);
         }
         
         h1 {
-            color: #f5f5f5;
+            color: #343a40;
             text-align: center;
             margin-bottom: 60px;
             font-size: 2.2rem;
             font-weight: 300;
             letter-spacing: 3px;
             text-transform: uppercase;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
+            border-bottom: 1px solid rgba(0,0,0,0.2);
             padding-bottom: 20px;
         }
         
         .section {
             margin-bottom: 40px;
             padding: 30px;
-            background: rgba(30, 30, 30, 0.8);
+            background: rgba(248, 249, 250, 0.8);
             border-radius: 1px;
-            border-left: 2px solid #666;
+            border-left: 2px solid #6c757d;
         }
         
         .code-input {
@@ -50,19 +50,19 @@
             font-family: 'Consolas', 'Monaco', monospace;
             font-size: 13px;
             padding: 20px;
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1px solid rgba(0,0,0,0.15);
             border-radius: 1px;
-            background: #0d0d0d;
-            color: #c0c0c0;
+            background: #ffffff;
+            color: #495057;
             resize: vertical;
-            box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
             box-sizing: border-box;
         }
         
         .run-btn {
-            background: linear-gradient(180deg, #3a3a3a, #2a2a2a);
-            color: #e0e0e0;
-            border: 1px solid rgba(255,255,255,0.2);
+            background: linear-gradient(180deg, #e9ecef, #dee2e6);
+            color: #495057;
+            border: 1px solid rgba(0,0,0,0.2);
             padding: 12px 24px;
             border-radius: 1px;
             cursor: pointer;
@@ -75,21 +75,21 @@
         }
         
         .run-btn:hover {
-            background: linear-gradient(180deg, #4a4a4a, #3a3a3a);
-            border-color: rgba(255,255,255,0.3);
+            background: linear-gradient(180deg, #dee2e6, #ced4da);
+            border-color: rgba(0,0,0,0.3);
         }
         
         .output {
-            background: #0a0a0a;
-            color: #b0b0b0;
+            background: #ffffff;
+            color: #495057;
             padding: 25px;
             border-radius: 1px;
             font-family: 'Consolas', 'Monaco', monospace;
             min-height: 80px;
             white-space: pre-wrap;
             margin-top: 15px;
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: inset 0 2px 8px rgba(0,0,0,0.4);
+            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
         }
 
         .examples {
@@ -100,22 +100,22 @@
         }
         
         .example-card {
-            background: rgba(40, 40, 40, 0.8);
+            background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 1px;
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1px solid rgba(0,0,0,0.15);
             cursor: pointer;
             transition: all 0.3s ease;
         }
         
         .example-card:hover {
-            background: rgba(50, 50, 50, 0.9);
-            border-color: rgba(255,255,255,0.25);
+            background: rgba(248, 249, 250, 0.9);
+            border-color: rgba(0,0,0,0.25);
         }
         
         .example-title {
             font-weight: 400;
-            color: #d0d0d0;
+            color: #495057;
             margin-bottom: 12px;
             font-size: 14px;
             text-transform: uppercase;
@@ -123,25 +123,25 @@
         }
         
         .example-code {
-            background: rgba(0,0,0,0.6);
+            background: rgba(233, 236, 239, 0.6);
             padding: 12px;
             border-radius: 1px;
             font-size: 12px;
-            color: #a0a0a0;
+            color: #6c757d;
             font-family: 'Consolas', 'Monaco', monospace;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(0,0,0,0.1);
         }
         
         .syntax-highlight {
-            background: rgba(25, 25, 25, 0.8);
+            background: rgba(248, 249, 250, 0.8);
             padding: 25px;
             border-radius: 1px;
             margin: 20px 0;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(0,0,0,0.1);
         }
         
         .syntax-highlight h4 {
-            color: #d0d0d0;
+            color: #495057;
             font-weight: 300;
             margin-bottom: 15px;
             text-transform: uppercase;
@@ -156,17 +156,17 @@
         
         .syntax-highlight li {
             padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            color: #b0b0b0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: #6c757d;
         }
         
         .syntax-highlight strong {
-            color: #e0e0e0;
+            color: #495057;
             font-weight: 400;
         }
         
         h3 {
-            color: #d0d0d0;
+            color: #495057;
             font-weight: 300;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -176,7 +176,7 @@
         
         p {
             line-height: 1.6;
-            color: #b0b0b0;
+            color: #6c757d;
             font-size: 14px;
         }
     </style>
@@ -185,14 +185,14 @@
     <div class="container">
         <h1>Hasaqui</h1>
         
-        <div class="section" style="text-align: center; background: rgba(15, 15, 15, 0.95); border: 1px solid rgba(255,255,255,0.2); margin-bottom: 50px;">
-            <h3 style="color: #d0d0d0; margin-bottom: 25px; font-weight: 300;">Featured Expression</h3>
-            <div style="background: #000000; padding: 40px; border-radius: 1px; margin: 20px 0; border: 1px solid rgba(255,255,255,0.1);">
-                <div style="font-size: 32px; font-weight: 300; text-shadow: 0 0 20px #ffffff, 0 0 40px #ffffff, 0 0 60px #ffffff; color: #ffffff; letter-spacing: 3px; margin-bottom: 20px; font-family: 'Georgia', serif;">
+        <div class="section" style="text-align: center; background: rgba(248, 249, 250, 0.95); border: 1px solid rgba(0,0,0,0.2); margin-bottom: 50px;">
+            <h3 style="color: #495057; margin-bottom: 25px; font-weight: 300;">Featured Expression</h3>
+            <div style="background: #ffffff; padding: 40px; border-radius: 1px; margin: 20px 0; border: 1px solid rgba(0,0,0,0.1);">
+                <div style="font-size: 32px; font-weight: 300; text-shadow: 0 0 20px #0099ff, 0 0 40px #0099ff, 0 0 60px #0099ff; color: #0099ff; letter-spacing: 3px; margin-bottom: 20px; font-family: 'Georgia', serif;">
                     This is something positive message
                 </div>
-                <div style="color: #808080; font-size: 14px; margin-top: 25px; text-transform: uppercase; letter-spacing: 2px;">
-                    Expression: <code style="background: rgba(40,40,40,0.8); padding: 5px 12px; border-radius: 1px; color: #b0b0b0; border: 1px solid rgba(255,255,255,0.1);">glow positive</code>
+                <div style="color: #6c757d; font-size: 14px; margin-top: 25px; text-transform: uppercase; letter-spacing: 2px;">
+                    Expression: <code style="background: rgba(233, 236, 239, 0.8); padding: 5px 12px; border-radius: 1px; color: #495057; border: 1px solid rgba(0,0,0,0.1);">glow positive</code>
                 </div>
             </div>
         </div>
@@ -224,7 +224,7 @@
 Example:
 show positive
 fancy positive
-wave positive">glow positive</textarea>
+wave positive">show positive</textarea>
             <br>
             <button class="run-btn" onclick="runCode()">▶ Run Hasaqui Code</button>
             <button class="run-btn" onclick="clearOutput()">🗑 Clear Output</button>
@@ -246,6 +246,7 @@ wave positive">glow positive</textarea>
                 </div>
                 
                 <div class="example-card" onclick="loadExample('rainbow positive')">
+                    <div class="example-title">Colorful Text</div>
                     <div class="example-code">rainbow positive</div>
                 </div>
                 
@@ -266,51 +267,83 @@ wave positive">glow positive</textarea>
             </div>
         </div>
     </div>
-</body>
-</html>
 
-<script>
-let interpreter;
+    <script>
+        let interpreter;
 
-class HasaquiInterpreter {
-    constructor() {
-        this.message = "This is something positive message";
-        this.output = document.getElementById('output');
-    }
-
-    execute(code) {
-        if (!this.output) {
-            this.output = document.getElementById('output');
-        }
-        
-        const lines = code.trim().split('\n');
-        this.output.innerHTML = '';
-        
-        for (let line of lines) {
-            const trimmedLine = line.trim();
-            if (trimmedLine === '') continue;
-            
-            const parts = trimmedLine.split(' ');
-            const command = parts[0].toLowerCase();
-            const param = parts[1] ? parts[1].toLowerCase() : '';
-            
-            if (param === 'positive' || param === '') {
-                this.executeCommand(command);
-            } else {
-                this.output.innerHTML += 'Error: Unknown parameter "' + param + '"\n';
+        class HasaquiInterpreter {
+            constructor() {
+                this.message = "This is something positive message";
+                this.output = document.getElementById('output');
             }
-        }
-    }
 
-    executeCommand(command) {
-        switch (command) {
-            case 'show':
+            execute(code) {
+                const lines = code.trim().split('\n');
+                this.output.innerHTML = '';
+                
+                for (let line of lines) {
+                    const trimmedLine = line.trim();
+                    if (trimmedLine === '') continue;
+                    
+                    const parts = trimmedLine.split(' ');
+                    const command = parts[0].toLowerCase();
+                    const param = parts[1] ? parts[1].toLowerCase() : '';
+                    
+                    if (param === 'positive' || param === '') {
+                        this.executeCommand(command);
+                    } else {
+                        this.output.innerHTML += 'Error: Unknown parameter "' + param + '"\n';
+                    }
+                }
+            }
+
+            executeCommand(command) {
+                switch (command) {
+                    case 'show':
+                        this.showBasic();
+                        break;
+                    case 'fancy':
+                        this.showFancy();
+                        break;
+                    case 'wave':
+                        this.showWave();
+                        break;
+                    case 'rainbow':
+                        this.showRainbow();
+                        break;
+                    case 'binary':
+                        this.showBinary();
+                        break;
+                    case 'reverse':
+                        this.showReverse();
+                        break;
+                    case 'upper':
+                        this.showUpper();
+                        break;
+                    case 'matrix':
+                        this.showMatrix();
+                        break;
+                    case 'bounce':
+                        this.showBounce();
+                        break;
+                    case 'glow':
+                        this.showGlow();
+                        break;
+                    default:
+                        this.output.innerHTML += 'Error: Unknown command "' + command + '"\n';
+                }
+            }
+
+            showBasic() {
                 this.output.innerHTML += this.message + '\n\n';
-                break;
-            case 'fancy':
-                this.output.innerHTML += '\n╔══════════════════════════════════════════╗\n║  This is something positive message      ║\n╚══════════════════════════════════════════╝\n\n    ★ ✦ ✧ ★ ✦ ✧ ★ ✦ ✧ ★ ✦ ✧ ★\n    \n';
-                break;
-            case 'wave':
+            }
+
+            showFancy() {
+                const fancyText = '\n╔══════════════════════════════════════════╗\n║  This is something positive message      ║\n╚══════════════════════════════════════════╝\n\n    ★ ✦ ✧ ★ ✦ ✧ ★ ✦ ✧ ★ ✦ ✧ ★\n    \n';
+                this.output.innerHTML += fancyText;
+            }
+
+            showWave() {
                 const chars = this.message.split('');
                 let waveText = '';
                 chars.forEach((char, index) => {
@@ -318,81 +351,86 @@ class HasaquiInterpreter {
                     waveText += ' '.repeat(Math.floor(spaces)) + char;
                 });
                 this.output.innerHTML += waveText + '\n\n';
-                break;
-            case 'rainbow':
+            }
+
+            showRainbow() {
                 const colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3'];
-                const chars2 = this.message.split('');
+                const chars = this.message.split('');
                 let rainbowText = '';
-                chars2.forEach((char, index) => {
+                chars.forEach((char, index) => {
                     const color = colors[index % colors.length];
                     rainbowText += '<span style="color: ' + color + '">' + char + '</span>';
                 });
                 this.output.innerHTML += rainbowText + '\n\n';
-                break;
-            case 'binary':
+            }
+
+            showBinary() {
                 let binaryText = '';
                 for (let char of this.message) {
                     binaryText += char.charCodeAt(0).toString(2).padStart(8, '0') + ' ';
                 }
                 this.output.innerHTML += 'Binary: ' + binaryText + '\n\n';
-                break;
-            case 'reverse':
+            }
+
+            showReverse() {
                 const reversed = this.message.split('').reverse().join('');
                 this.output.innerHTML += reversed + '\n\n';
-                break;
-            case 'upper':
+            }
+
+            showUpper() {
                 this.output.innerHTML += this.message.toUpperCase() + '\n\n';
-                break;
-            case 'matrix':
+            }
+
+            showMatrix() {
                 const matrixChars = ['0', '1', '日', '本', 'ハ', 'サ', 'ク', 'イ'];
                 let matrixText = '';
                 for (let i = 0; i < 50; i++) {
                     matrixText += matrixChars[Math.floor(Math.random() * matrixChars.length)];
                 }
-                this.output.innerHTML += '<span style="color: #00ff00">' + matrixText + '</span>\n';
-                this.output.innerHTML += '<span style="color: #ffffff; background: #000000; padding: 5px;">' + this.message + '</span>\n';
-                this.output.innerHTML += '<span style="color: #00ff00">' + matrixText + '</span>\n\n';
-                break;
-            case 'bounce':
-                const chars3 = this.message.split('');
+                this.output.innerHTML += '<span style="color: #00aa00">' + matrixText + '</span>\n';
+                this.output.innerHTML += '<span style="color: #000000; background: #f8f9fa; padding: 5px;">' + this.message + '</span>\n';
+                this.output.innerHTML += '<span style="color: #00aa00">' + matrixText + '</span>\n\n';
+            }
+
+            showBounce() {
+                const chars = this.message.split('');
                 let bounceText = '';
-                chars3.forEach((char, index) => {
+                chars.forEach((char, index) => {
                     const bounce = index % 2 === 0 ? char.toUpperCase() : char.toLowerCase();
                     bounceText += bounce;
                 });
                 this.output.innerHTML += bounceText + '\n\n';
-                break;
-            case 'glow':
-                this.output.innerHTML += '<span style="text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 30px #ffff00; color: #ffffff;">' + this.message + '</span>\n\n';
-                break;
-            default:
-                this.output.innerHTML += 'Error: Unknown command "' + command + '"\n';
+            }
+
+            showGlow() {
+                this.output.innerHTML += '<span style="text-shadow: 0 0 15px #0099ff, 0 0 30px #0099ff, 0 0 45px #0099ff; color: #0099ff; font-weight: bold;">' + this.message + '</span>\n\n';
+            }
         }
-    }
-}
 
-function runCode() {
-    const code = document.getElementById('codeInput').value;
-    if (interpreter) {
-        interpreter.execute(code);
-    }
-}
+        function runCode() {
+            const code = document.getElementById('codeInput').value;
+            if (interpreter) {
+                interpreter.execute(code);
+            }
+        }
 
-function clearOutput() {
-    document.getElementById('output').innerHTML = 'Ready to execute Hasaqui code...';
-}
+        function clearOutput() {
+            document.getElementById('output').innerHTML = 'Ready to execute Hasaqui code...';
+        }
 
-function loadExample(code) {
-    document.getElementById('codeInput').value = code;
-    runCode();
-}
+        function loadExample(code) {
+            document.getElementById('codeInput').value = code;
+            runCode();
+        }
 
-function openFullscreen() {
-    alert('Fullscreen mode temporarily disabled for stability');
-}
+        function openFullscreen() {
+            alert('Fullscreen mode will be implemented later');
+        }
 
-document.addEventListener('DOMContentLoaded', function() {
-    interpreter = new HasaquiInterpreter();
-    runCode();
-});
-</script>
+        document.addEventListener('DOMContentLoaded', function() {
+            interpreter = new HasaquiInterpreter();
+            runCode();
+        });
+    </script>
+</body>
+</html>
